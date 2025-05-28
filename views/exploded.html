@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Exploded View</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/exploded.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls-panel">
+            <div class="info-card">
+                <h2>Vista Explosionada</h2>
+                <p>Controla la separación de las piezas usando el deslizador</p>
+                <div class="slider-container">
+                    <input type="range" id="explosion-slider" min="0" max="100" value="0">
+                    <div class="slider-labels">
+                        <span>Unido</span>
+                        <span>Separado</span>
+                    </div>
+                </div>
+                <div class="buttons-container">
+                    <button id="reset-view" class="control-btn">Restablecer Vista</button>
+                    <button id="auto-explode" class="control-btn">Animación Automática</button>
+                </div>
+                <div class="parts-list">
+                    <h3>Componentes</h3>
+                    <ul id="parts-menu">
+                        <!-- Se llenará dinámicamente con JavaScript -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="model-container">
+            <model-viewer
+                id="exploded-model"
+                camera-controls
+                shadow-intensity="1"
+                environment-image="neutral"
+                exposure="1"
+                shadow-softness="1"
+                camera-orbit="-30deg 75deg 105%"
+                src="../assets/models/modelo.glb"
+                alt="3D model exploded view"
+                loading="eager"
+                interaction-prompt="none"
+                camera-target="0 0 0"
+                min-camera-orbit="auto auto 5%"
+                max-camera-orbit="auto auto 400%">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+            </model-viewer>
+        </div>
+    </div>
+
+    <div class="tooltip" id="part-tooltip">
+        <div class="tooltip-content">
+            <h3></h3>
+            <p></p>
+        </div>
+    </div>
+
+    <script src="../js/exploded.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Modelos 3D</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="assets/css/common.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1a237e, #311b92);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background: var(--glass-background);
+            backdrop-filter: var(--glass-blur);
+            border: var(--glass-border);
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            color: white;
+            box-shadow: 0 8px 32px var(--shadow-color);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .header p {
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .views-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .view-card {
+            background: var(--glass-background);
+            backdrop-filter: var(--glass-blur);
+            border: var(--glass-border);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px var(--shadow-color);
+            animation: fadeInScale 0.5s ease forwards;
+            opacity: 0;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .view-card:nth-child(1) { animation-delay: 0.1s; }
+        .view-card:nth-child(2) { animation-delay: 0.2s; }
+        .view-card:nth-child(3) { animation-delay: 0.3s; }
+        .view-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .view-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px var(--shadow-color);
+        }
+
+        .view-card h2 {
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .view-card p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .view-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .view-btn:hover {
+            transform: scale(1.05);
+            background: var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .views-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .views-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 1.5rem;
+            }
+
+            .view-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Interactivos para Modelos 3D</h1>
+            <p>Formas de visualizar e interactuar con modelos 3D. Cada vista ofrece una experiencia única con anotaciones detalladas, tooltips informativos y controles interactivos.</p>
+        </header>
+
+        <main class="views-grid">
+            <div class="view-card">
+                <h2>Vista Carrusel</h2>
+                <p>Navega entre diferentes modelos 3D con una interfaz de carrusel. Incluye anotaciones interactivas, tooltips informativos y controles de navegación intuitivos.</p>
+                <a href="views/carousel.html" class="view-btn">Ver Carrusel</a>
+            </div>
+
+            <div class="view-card">
+                <h2>Vista de Tarjetas</h2>
+                <p>Explora los modelos con un elegante efecto de volteo. Descubre información detallada, anotaciones y tooltips en cada tarjeta.</p>
+                <a href="views/cards.html" class="view-btn">Ver Tarjetas</a>
+            </div>
+
+            <div class="view-card">
+                <h2>Vista Explosionada</h2>
+                <p>Examina las partes internas del modelo con controles de separación. Incluye anotaciones detalladas y puntos de interés interactivos.</p>
+                <a href="views/exploded.html" class="view-btn">Ver Vista Explosionada</a>
+            </div>
+
+            <div class="view-card">
+                <h2>Vista con Anotaciones</h2>
+                <p>Explora el modelo con anotaciones detalladas y puntos de interés. Incluye información técnica, medidas y especificaciones sobre cada componente.</p>
+                <a href="views/annotations.html" class="view-btn">Ver Anotaciones</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html> 

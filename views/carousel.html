@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Carousel</title>
+    <link rel="stylesheet" href="../assets/css/carousel.css">
+    <!-- Import Model Viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="model-info">
+            <div class="info-card">
+                <h2>Modelo 3D</h2>
+                <p class="model-description">Este es un modelo 3D interactivo. Puedes rotarlo y hacer zoom utilizando el mouse.</p>
+            </div>
+        </div>
+        <model-viewer
+            id="model-viewer"
+            camera-controls
+            auto-rotate
+            shadow-intensity="1"
+            environment-image="neutral"
+            exposure="1"
+            shadow-softness="1"
+            camera-orbit="0deg 75deg 105%"
+            src="../assets/models/modelo.glb"
+            alt="3D model"
+            loading="eager"
+            interaction-prompt="none">
+            <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
+            </div>
+        </model-viewer>
+        <div class="controls">
+            <button class="nav-btn prev-btn">&#10094;</button>
+            <button class="nav-btn next-btn">&#10095;</button>
+        </div>
+    </div>
+    <script src="../js/carousel.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Annotations</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/annotations.css">
+</head>
+<body>
+    <div class="container">
+        <div class="model-container">
+            <model-viewer
+                id="annotated-model"
+                camera-controls
+                auto-rotate
+                shadow-intensity="1"
+                environment-image="neutral"
+                exposure="1"
+                shadow-softness="1"
+                camera-orbit="0deg 75deg 105%"
+                src="../assets/models/modelo.glb"
+                alt="3D model"
+                loading="eager"
+                interaction-prompt="none">
+
+                <!-- Punto inicial (parte superior) -->
+                <button class="hotspot" slot="hotspot-1" data-position="0 2 0" data-normal="0 1 0">
+                    <div class="annotation">
+                        <div class="annotation-content">
+                            <h3>Inicio del Modelo</h3>
+                            <p>Punto de inicio del modelo, donde se pueden observar las características principales de la parte superior.</p>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Punto segundo cuarto -->
+                <button class="hotspot" slot="hotspot-2" data-position="2 1 0" data-normal="1 0 0">
+                    <div class="annotation">
+                        <div class="annotation-content">
+                            <h3>Sección Media-Superior</h3>
+                            <p>Esta sección muestra detalles importantes de la estructura en su parte media-superior.</p>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Punto medio -->
+                <button class="hotspot" slot="hotspot-3" data-position="-2 0 0" data-normal="-1 0 0">
+                    <div class="annotation">
+                        <div class="annotation-content">
+                            <h3>Sección Central</h3>
+                            <p>Punto medio del modelo donde se pueden apreciar los elementos centrales y su integración.</p>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Punto final -->
+                <button class="hotspot" slot="hotspot-4" data-position="0 -2 0" data-normal="0 -1 0">
+                    <div class="annotation">
+                        <div class="annotation-content">
+                            <h3>Base del Modelo</h3>
+                            <p>Sección final del modelo donde se pueden observar los detalles de la base y su estructura de soporte.</p>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- Progress bar for loading -->
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+            </model-viewer>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <div class="info-card">
+                <h2>Instrucciones</h2>
+                <p>Haz clic en los puntos brillantes alrededor del modelo para ver información detallada. Los puntos están distribuidos desde la parte superior hasta la base del modelo.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/annotations.js"></script>
+</body>
+</html>
