@@ -1,3 +1,5 @@
+@import url('variables.css');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,13 +7,13 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1a237e, #311b92);
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, var(--background-gradient-1), var(--background-gradient-2));
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: var(--spacing-lg);
 }
 
 .container {
@@ -19,7 +21,7 @@ body {
     max-width: 1400px;
     display: grid;
     grid-template-columns: 300px 1fr;
-    gap: 2rem;
+    gap: var(--spacing-lg);
     position: relative;
 }
 
@@ -29,17 +31,17 @@ body {
 }
 
 .info-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 1.5rem;
-    color: white;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--glass-background);
+    backdrop-filter: var(--glass-blur);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    color: var(--text-primary);
+    box-shadow: 0 4px 30px var(--shadow-color);
+    border: var(--glass-border);
 }
 
 .info-card h2 {
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-sm);
     font-size: 1.5rem;
     font-weight: 500;
 }
@@ -48,17 +50,18 @@ body {
     font-size: 0.9rem;
     line-height: 1.6;
     opacity: 0.9;
-    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
 }
 
 .slider-container {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-md);
 }
 
 input[type="range"] {
     width: 100%;
     height: 4px;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--glass-background);
     border-radius: 2px;
     outline: none;
     -webkit-appearance: none;
@@ -68,10 +71,10 @@ input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 20px;
     height: 20px;
-    background: white;
+    background: var(--text-primary);
     border-radius: 50%;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform var(--transition-fast);
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
@@ -81,43 +84,44 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .slider-labels {
     display: flex;
     justify-content: space-between;
-    margin-top: 0.5rem;
+    margin-top: var(--spacing-xs);
     font-size: 0.8rem;
-    opacity: 0.8;
+    color: var(--text-secondary);
 }
 
 .buttons-container {
     display: grid;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
 }
 
 .control-btn {
-    padding: 0.8rem 1rem;
+    padding: var(--spacing-sm) var(--spacing-sm);
     border: none;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    border-radius: var(--border-radius-sm);
+    background: var(--glass-background);
+    color: var(--text-primary);
     font-size: 0.9rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all var(--transition-normal);
+    border: var(--glass-border);
 }
 
 .control-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--glass-background);
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--shadow-color-strong);
 }
 
 .model-container {
     width: 100%;
     height: 80vh;
     position: relative;
-    border-radius: 15px;
+    border-radius: var(--border-radius-md);
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--glass-background);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
 }
 
 model-viewer {
@@ -128,13 +132,14 @@ model-viewer {
 }
 
 .parts-list {
-    margin-top: 1.5rem;
+    margin-top: var(--spacing-md);
 }
 
 .parts-list h3 {
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-sm);
     font-size: 1.2rem;
     font-weight: 500;
+    color: var(--text-primary);
 }
 
 #parts-menu {
@@ -142,45 +147,47 @@ model-viewer {
 }
 
 .part-item {
-    padding: 0.8rem;
-    margin-bottom: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    background: var(--glass-background);
+    border-radius: var(--border-radius-sm);
     cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all var(--transition-normal);
+    border: var(--glass-border);
+    color: var(--text-primary);
 }
 
 .part-item:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--glass-background);
     transform: translateX(5px);
+    box-shadow: 0 4px 15px var(--shadow-color-strong);
 }
 
 .part-item.active {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.4);
+    background: var(--glass-background);
+    border-color: var(--primary-color);
 }
 
 .tooltip {
     position: absolute;
     display: none;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: var(--glass-background);
+    backdrop-filter: var(--glass-blur);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 4px 15px var(--shadow-color-strong);
     max-width: 250px;
     z-index: 1000;
 }
 
 .tooltip h3 {
-    color: #1a237e;
-    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
     font-size: 1.1rem;
 }
 
 .tooltip p {
-    color: #333;
+    color: var(--text-secondary);
     font-size: 0.9rem;
     line-height: 1.4;
 }
