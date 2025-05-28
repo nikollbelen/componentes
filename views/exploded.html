@@ -12,7 +12,7 @@
         <div class="controls-panel">
             <div class="info-card">
                 <h2>Vista Explosionada</h2>
-                <p>Controla la separación de las piezas usando el deslizador</p>
+                <p>Controla la separación de las piezas usando el deslizador o gestos táctiles</p>
                 <div class="slider-container">
                     <input type="range" id="explosion-slider" min="0" max="100" value="0">
                     <div class="slider-labels">
@@ -37,6 +37,8 @@
             <model-viewer
                 id="exploded-model"
                 camera-controls
+                touch-action="pan-y"
+                interaction-policy="allow-when-focused"
                 shadow-intensity="1"
                 environment-image="neutral"
                 exposure="1"

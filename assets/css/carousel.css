@@ -117,3 +117,16 @@ model-viewer {
     opacity: 1;
     transition: opacity var(--transition-normal);
 }
+
+/* Celulares (ancho max 768px) */
+@media (max-width: 768px) {
+    .info-card p {
+        overflow-y: auto;
+        max-height: 6rem;
+    }
+
+    .info-card {
+        overflow-y: hidden;
+        max-height: 12rem;
+    }
+}

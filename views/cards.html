@@ -15,20 +15,22 @@
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="content">
-                            <h2>Modelo Principal</h2>
-                            <p>Un modelo 3D interactivo que muestra detalles importantes. Haz clic para ver el modelo en 3D.</p>
+                            <h2>Actuadores de simple efecto</h2>
+                            <p>Un cilindro de simple efecto desarrolla un trabajo sólo en un sentido. El émbolo se hace retornar por medio de un resorte interno o por algún otro medio externo como cargas, movimientos mecánicos, etc. Puede ser de tipo “normalmente dentro” o “normalmente fuera”</p>
                         </div>
                     </div>
                     <div class="card-back">
                         <model-viewer
                             camera-controls
+                            touch-action="pan-y"
+                            interaction-policy="allow-when-focused"
                             auto-rotate
                             shadow-intensity="1"
                             environment-image="neutral"
                             exposure="1"
                             shadow-softness="1"
                             camera-orbit="0deg 75deg 105%"
-                            src="../assets/models/modelo.glb"
+                            src="../assets/models/Actuador de doble efecto v3.glb"
                             alt="3D model"
                             loading="eager"
                             interaction-prompt="none">
@@ -42,20 +44,23 @@
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="content">
-                            <h2>Modelo C</h2>
-                            <p>Explora este modelo desde todos los ángulos. Voltea la tarjeta para interactuar con el modelo 3D.</p>
+                            <h2>Actuadores de doble efecto </h2>
+                            <p>Los cilindros de doble efecto son aquellos que realizan tanto su carrera de avance como la de retroceso por acción del aire comprimido. Su denominación se debe a que emplean las dos caras del émbolo (aire en ambas cámaras), por lo que estos componentes sí que pueden realizar trabajo en ambos sentidos.
+                            </p>
                         </div>
                     </div>
                     <div class="card-back">
                         <model-viewer
                             camera-controls
+                            touch-action="pan-y"
+                            interaction-policy="allow-when-focused"
                             auto-rotate
                             shadow-intensity="1"
                             environment-image="neutral"
                             exposure="1"
                             shadow-softness="1"
                             camera-orbit="0deg 75deg 105%"
-                            src="../assets/models/C.glb"
+                            src="../assets/models/Actuador de doble efecto v3 (Sin resort).glb"
                             alt="3D model"
                             loading="eager"
                             interaction-prompt="none">
@@ -69,20 +74,23 @@
                 <div class="card-inner">
                     <div class="card-front">
                         <div class="content">
-                            <h2>Modelo Z</h2>
-                            <p>Un modelo detallado con características únicas. Dale la vuelta a la tarjeta para explorar en 3D.</p>
+                            <h2>Actuadores de doble vástago</h2>
+                            <p>Este tipo de cilindros tiene un vástago corrido hacia ambos lados. La guía del vástago es mejor, porque dispone de dos cojinetes y la distancia entre éstos permanece constante. Por eso, este cilindro puede absorber también cargas laterales pequeñas. Los emisores de señales pueden disponerse en el lado libre del vástago.
+                            </p>
                         </div>
                     </div>
                     <div class="card-back">
                         <model-viewer
                             camera-controls
+                            touch-action="pan-y"
+                            interaction-policy="allow-when-focused"
                             auto-rotate
                             shadow-intensity="1"
                             environment-image="neutral"
                             exposure="1"
                             shadow-softness="1"
                             camera-orbit="0deg 75deg 105%"
-                            src="../assets/models/z.glb"
+                            src="../assets/models/Actuadores de doble vástago (sin resorte).glb"
                             alt="3D model"
                             loading="eager"
                             interaction-prompt="none">

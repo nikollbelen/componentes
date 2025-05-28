@@ -12,14 +12,16 @@
     <div class="container">
         <div class="model-info">
             <div class="info-card">
-                <h2>Modelo 3D</h2>
-                <p class="model-description">Este es un modelo 3D interactivo. Puedes rotarlo y hacer zoom utilizando el mouse.</p>
+                <!-- <h2>Modelo 3D</h2> -->
+                <p class="model-description">Este es un modelo 3D interactivo. Puedes rotarlo y hacer zoom utilizando el mouse o gestos táctiles.</p>
             </div>
         </div>
         <model-viewer
             id="model-viewer"
             camera-controls
-            auto-rotate
+            touch-action="pan-y"
+            touch-action="pan-x"
+            interaction-policy="allow-when-focused"
             shadow-intensity="1"
             environment-image="neutral"
             exposure="1"

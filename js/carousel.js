@@ -2,16 +2,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Model data
     const models = [
         {
-            url: '../assets/models/modelo.glb',
-            description: 'Este es el primer modelo 3D. Puedes interactuar con él usando el mouse para rotar y hacer zoom.'
-        },
-        {
-            url: '../assets/models/C.glb',
-            description: 'Segundo modelo 3D. Explora los detalles usando los controles de cámara.'
+            url: '../assets/models/A.glb',
+            description: 'Como se puede observar, los fabricantes ofertan soluciones para casi todas las necesidades que se puedan presentar en el diseño del automatismo neumático. Conviene repasar la gama genérica de actuadores de los principales fabricantes. Puedes interactuar con él usando el mouse para rotar y hacer zoom.'
         },
         {
             url: '../assets/models/z.glb',
-            description: 'Tercer modelo 3D. Puedes usar AR para ver este modelo en tu espacio real.'
+            description: 'Como se puede observar, los fabricantes ofertan soluciones para casi todas las necesidades que se puedan presentar en el diseño del automatismo neumático. Conviene repasar la gama genérica de actuadores de los principales fabricantes. Puedes interactuar con él usando el mouse para rotar y hacer zoom.'
+        },
+        {
+            url: '../assets/models/C.glb',
+            description: 'Como se puede observar, los fabricantes ofertan soluciones para casi todas las necesidades que se puedan presentar en el diseño del automatismo neumático. Conviene repasar la gama genérica de actuadores de los principales fabricantes. Puedes interactuar con él usando el mouse para rotar y hacer zoom.'
+        },
+        {
+            url: '../assets/models/b.glb',
+            description: 'Como se puede observar, los fabricantes ofertan soluciones para casi todas las necesidades que se puedan presentar en el diseño del automatismo neumático. Conviene repasar la gama genérica de actuadores de los principales fabricantes. Puedes interactuar con él usando el mouse para rotar y hacer zoom.'
+        },
+        {
+            url: '../assets/models/C.glb',
+            description: 'Como se puede observar, los fabricantes ofertan soluciones para casi todas las necesidades que se puedan presentar en el diseño del automatismo neumático. Conviene repasar la gama genérica de actuadores de los principales fabricantes. Puedes interactuar con él usando el mouse para rotar y hacer zoom.'
+        },
+        {
+            url: '../assets/models/b.glb',
+            description: 'Como se puede observar, los fabricantes ofertan soluciones para casi todas las necesidades que se puedan presentar en el diseño del automatismo neumático. Conviene repasar la gama genérica de actuadores de los principales fabricantes. Puedes interactuar con él usando el mouse para rotar y hacer zoom.'
         }
     ];
 

@@ -13,13 +13,15 @@
             <model-viewer
                 id="annotated-model"
                 camera-controls
+                touch-action="pan-y"
+                interaction-policy="allow-when-focused"
                 auto-rotate
                 shadow-intensity="1"
                 environment-image="neutral"
                 exposure="1"
                 shadow-softness="1"
                 camera-orbit="0deg 75deg 105%"
-                src="../assets/models/modelo.glb"
+                src="../assets/models/Actuadores neumáticos.glb"
                 alt="3D model"
                 loading="eager"
                 interaction-prompt="none">
@@ -74,8 +76,8 @@
         <!-- Instructions -->
         <div class="instructions">
             <div class="info-card">
-                <h2>Instrucciones</h2>
-                <p>Haz clic en los puntos brillantes alrededor del modelo para ver información detallada. Los puntos están distribuidos desde la parte superior hasta la base del modelo.</p>
+                <h2>Amortiguación</h2>
+                <p>En los accionamientos neumáticos que son ejecutados a velocidades importantes y la masa trasladada es representativa, se producen impactos del émbolo contra la camisa que liberan gran cantidad de energía que tiende a dañar el cilindro. En estos casos, es evidente que la regulación de velocidad alargaría la vida del componente, pero al mismo tiempo restaría eficacia al sistema.</p>
             </div>
         </div>
     </div>

@@ -110,7 +110,7 @@ model-viewer {
     transform: translateX(-50%);
     z-index: 10;
     width: 90%;
-    max-width: 600px;
+    max-width: 90%;
 }
 
 .info-card {

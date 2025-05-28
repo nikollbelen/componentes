@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Audio - Actuadores Neumáticos</title>
+    <link rel="stylesheet" href="../assets/css/audio-player.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/7.7.3/wavesurfer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="audio-player-container">
+            <div class="player-header">
+                <h2 id="audio-title">Actuadores Neumáticos - Historia</h2>
+                <span id="time-display">00:00 / 00:00</span>
+            </div>
+
+            <div class="waveform-container">
+                <div id="waveform"></div>
+            </div>
+
+            <div class="controls-container">
+                <button id="prev-btn" class="control-btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button id="play-btn" class="control-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="next-btn" class="control-btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <div class="volume-control">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" id="volume" min="0" max="100" value="100">
+                </div>
+            </div>
+
+            <div class="transcript-container">
+                <h3>Transcripción</h3>
+                <div id="transcript" class="transcript-text">
+                    <!-- La transcripción se cargará dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="../js/audio-player.js"></script>
+</body>
+</html> 
