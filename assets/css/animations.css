@@ -1,3 +1,22 @@
+/* Font settings */
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASmartSans-Regular.woff2') format('woff2'),
+         url('../fonts/AASmartSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AA Smart Sans';
+    src: url('../fonts/AASmartSans-Bold.woff2') format('woff2'),
+         url('../fonts/AASmartSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+/* Animation specific styles */
 .animation-card {
     background: #ffffff;
     border-radius: 12px;

@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'AA Smart Sans', sans-serif;
     background: linear-gradient(135deg, var(--background-gradient-1), var(--background-gradient-2));
     min-height: 100vh;
     display: flex;
@@ -15,6 +15,28 @@ body {
     align-items: center;
     padding: var(--spacing-lg);
 }
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; 
+    background: radial-gradient(ellipse at center top, #F00 0%, #351EE0 40%, #ffffff 70%, transparent);
+    opacity: 0.2;
+  }
+  
+  body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: radial-gradient(ellipse at center bottom, #F00 0%, #351EE0 40%, #ffffff 70%, transparent);
+    opacity: 0.2; 
+  } 
+
 
 .container {
     width: 100%;
@@ -30,7 +52,8 @@ body {
     overflow: hidden;
     background: var(--glass-background);
     backdrop-filter: var(--glass-blur);
-    border: var(--glass-border);
+    box-shadow: var(--shadow);
+    border: var(--border-style);
 }
 
 model-viewer {
@@ -87,7 +110,8 @@ model-viewer {
     backdrop-filter: var(--glass-blur);
     padding: var(--spacing-sm);
     border-radius: var(--border-radius-sm);
-    box-shadow: 0 4px 15px var(--shadow-color-strong);
+    box-shadow: var(--shadow);
+    border: var(--border-style);
     width: 250px;
 }
 
@@ -119,15 +143,15 @@ model-viewer {
     border-radius: var(--border-radius-md);
     padding: var(--spacing-md);
     color: var(--text-primary);
-    box-shadow: 0 4px 30px var(--shadow-color);
-    border: var(--glass-border);
-    text-align: center;
+    box-shadow: var(--shadow);
+    border: var(--border-style);
+    text-align: left;
 }
 
 .info-card h2 {
     margin-bottom: var(--spacing-xs);
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .info-card p {
