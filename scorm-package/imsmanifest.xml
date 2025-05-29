@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="MANIFEST-ACTUADORES-NEUMATICOS" version="1.2"
+          xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+          xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd
+                              http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd
+                              http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+    
+    <metadata>
+        <schema>ADL SCORM</schema>
+        <schemaversion>1.2</schemaversion>
+    </metadata>
+    
+    <organizations default="ACTUADORES_ORG">
+        <organization identifier="ACTUADORES_ORG">
+            <title>Evolución de los Actuadores Neumáticos</title>
+            <item identifier="ITEM_1" identifierref="RESOURCE_1" isvisible="true">
+                <title>Historia de los Actuadores Neumáticos</title>
+                <adlcp:prerequisites type="aicc_script">ITEM_1</adlcp:prerequisites>
+                <adlcp:maxtimeallowed></adlcp:maxtimeallowed>
+                <adlcp:timelimitaction>continue,no message</adlcp:timelimitaction>
+                <adlcp:datafromlms></adlcp:datafromlms>
+                <adlcp:masteryscore>75</adlcp:masteryscore>
+            </item>
+        </organization>
+    </organizations>
+    
+    <resources>
+        <resource identifier="RESOURCE_1" type="webcontent" adlcp:scormtype="sco" href="index.html">
+            <file href="index.html"/>
+            <file href="views/timeline.html"/>
+            <file href="views/audio-player.html"/>
+            <file href="assets/css/main.css"/>
+            <file href="assets/css/timeline.css"/>
+            <file href="assets/css/audio-player.css"/>
+            <file href="assets/css/fonts.css"/>
+            <file href="js/timeline.js"/>
+            <file href="js/audio-player.js"/>
+            <file href="assets/libs/wavesurfer/wavesurfer.min.js"/>
+            <file href="assets/libs/fontawesome/css/all.min.css"/>
+            <file href="assets/libs/fontawesome/webfonts/fa-solid-900.woff2"/>
+            <file href="assets/libs/fontawesome/webfonts/fa-regular-400.woff2"/>
+            <file href="assets/fonts/roboto/roboto-v30-latin-300.woff2"/>
+            <file href="assets/fonts/roboto/roboto-v30-latin-400.woff2"/>
+            <file href="assets/fonts/roboto/roboto-v30-latin-500.woff2"/>
+            <file href="assets/fonts/roboto/roboto-v30-latin-700.woff2"/>
+            <file href="assets/audio/actuador-1950.mp3"/>
+            <file href="assets/audio/actuador-1960.mp3"/>
+            <file href="assets/audio/actuador-1970.mp3"/>
+            <file href="assets/audio/actuador-1980.mp3"/>
+            <file href="assets/audio/actuador-1990.mp3"/>
+        </resource>
+    </resources>
+</manifest> 
