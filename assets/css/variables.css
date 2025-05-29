@@ -1,6 +1,6 @@
 :root {
     /* Variables de color */
-    --primary-color: #2196F3;
+    --primary-color: #031795;
     --secondary-color: #FFC107;
     --accent-color: #FF4081;
     --success-color: #4CAF50;
@@ -8,8 +8,8 @@
     --error-color: #F44336;
     
     /* Variables de fondo */
-    --background-gradient-1: #1a237e;
-    --background-gradient-2: #311b92;
+    --background-gradient-1: linear-gradient(288deg, #62B6DA 7.1%, #366FA9 35.48%, #49488A 64.7%, #9F2B6A 93.92%);
+    --background-gradient-2: white;
     --background-color: rgba(255, 255, 255, 0.1);
     
     /* Variables de texto */
@@ -18,6 +18,7 @@
     --text-disabled: rgba(255, 255, 255, 0.6);
     
     /* Variables de sombras */
+    --shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 29.2px 3px rgba(3, 23, 149, 0.74);
     --shadow-color: rgba(0, 0, 0, 0.1);
     --shadow-color-strong: rgba(0, 0, 0, 0.2);
     
