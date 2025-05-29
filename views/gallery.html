@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes - Visualizador de Modelos 3D</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .gallery-container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 4/3;
+            background-color: #f5f5f5;
+            cursor: pointer;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            filter: blur(15px) brightness(0.4) contrast(1.2) saturate(1.2);
+            transform: scale(1.2) rotate(5deg);
+            z-index: 1;
+        }
+
+        .gallery-item img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(0.9);
+            filter: brightness(0.7);
+        }
+
+        .gallery-item .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            z-index: 3;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            opacity: 0;
+        }
+
+        .gallery-item:hover .hover-text {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #555;
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: 3;
+        }
+
+        .gallery-item:hover .image-caption {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Galería de Imágenes</h1>
+            <p>Explora nuestra colección de imágenes detalladas de componentes y sistemas neumáticos.</p>
+        </header>
+
+        <div class="gallery-container">
+            <a href="../index.html" class="back-button">← Volver al inicio</a>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('../assets/images/actuador-1950.png');">
+                    <img src="../assets/images/actuador-1950.png" alt="Actuador 1950">
+                    <div class="hover-text">Haz clic para más información</div>
+                    <div class="image-caption">Actuador histórico de 1950</div>
+                </div>
+                <div class="gallery-item" style="background-image: url('../assets/images/example_1.png');">
+                    <img src="../assets/images/example_1.png" alt="Ejemplo 1">
+                    <div class="hover-text">Haz clic para más información</div>
+                    <div class="image-caption">Ejemplo de componente 1</div>
+                </div>
+                <div class="gallery-item" style="background-image: url('../assets/images/example_2.png');">
+                    <img src="../assets/images/example_2.png" alt="Ejemplo 2">
+                    <div class="hover-text">Haz clic para más información</div>
+                    <div class="image-caption">Ejemplo de componente 2</div>
+                </div>
+                <div class="gallery-item" style="background-image: url('../assets/images/example_3.png');">
+                    <img src="../assets/images/example_3.png" alt="Ejemplo 3">
+                    <div class="hover-text">Haz clic para más información</div>
+                    <div class="image-caption">Ejemplo de componente 3</div>
+                </div>
+                <div class="gallery-item" style="background-image: url('../assets/images/example_4.png');">
+                    <img src="../assets/images/example_4.png" alt="Ejemplo 4">
+                    <div class="hover-text">Haz clic para más información</div>
+                    <div class="image-caption">Ejemplo de componente 4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

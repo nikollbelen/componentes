@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones 2D</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+
+    <!-- Lottie Player -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Animaciones 2D</h1>
+            <p>Explora las animaciones 2D que ilustran el funcionamiento y los principios de los actuadores neumáticos.</p>
+            <a href="../index.html" class="back-btn">Volver al inicio</a>
+        </header>
+
+        <main class="content">
+            <div class="animation-card">
+                <div class="animation-info">
+                    <h2>Principios de Neumática</h2>
+                    <p>Esta animación muestra los conceptos fundamentales de los sistemas neumáticos, incluyendo el flujo de aire comprimido y el funcionamiento básico de los componentes principales. Observa cómo interactúan los diferentes elementos para crear movimiento y control en el sistema.</p>
+                    <div class="animation-controls">
+                        <button class="control-btn" id="playPauseBtn">Reproducir</button>
+                        <button class="control-btn" id="stopBtn">Detener</button>
+                        <button class="control-btn" id="loopBtn">Bucle: Off</button>
+                    </div>
+                    <div class="speed-control">
+                        <span class="speed-label">Velocidad: 1x</span>
+                        <input type="range" class="speed-slider" id="speedSlider" min="0.5" max="2" step="0.1" value="1">
+                    </div>
+                </div>
+                <div class="animation-container">
+                    <div id="lottie-animation"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Inicializar la animación
+        let animation = lottie.loadAnimation({
+            container: document.getElementById('lottie-animation'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: '../assets/animations/Neumatica-1.json'
+        });
+
+        // Variables de control
+        let isPlaying = false;
+        let isLooping = false;
+
+        // Elementos DOM
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const loopBtn = document.getElementById('loopBtn');
+        const speedSlider = document.getElementById('speedSlider');
+        const speedLabel = document.querySelector('.speed-label');
+
+        // Control de reproducción/pausa
+        playPauseBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                animation.pause();
+                playPauseBtn.textContent = 'Reproducir';
+            } else {
+                animation.play();
+                playPauseBtn.textContent = 'Pausar';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Control de detención
+        stopBtn.addEventListener('click', () => {
+            animation.stop();
+            isPlaying = false;
+            playPauseBtn.textContent = 'Reproducir';
+        });
+
+        // Control de bucle
+        loopBtn.addEventListener('click', () => {
+            isLooping = !isLooping;
+            animation.loop = isLooping;
+            loopBtn.textContent = `Bucle: ${isLooping ? 'On' : 'Off'}`;
+        });
+
+        // Control de velocidad
+        speedSlider.addEventListener('input', (e) => {
+            const speed = parseFloat(e.target.value);
+            animation.setSpeed(speed);
+            speedLabel.textContent = `Velocidad: ${speed}x`;
+        });
+
+        // Evento de completado
+        animation.addEventListener('complete', () => {
+            if (!isLooping) {
+                isPlaying = false;
+                playPauseBtn.textContent = 'Reproducir';
+            }
+        });
+    </script>
+</body>
+</html> 
